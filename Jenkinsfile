@@ -9,6 +9,7 @@ pipeline {
            println "Lines\n ${lines}"
            for (line in lines) {
              println "myline is ${line}"
+           }
         }
       }
     }
