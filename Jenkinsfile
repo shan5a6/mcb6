@@ -1,21 +1,19 @@
+def welcom_note(){
+  println "Hey thanks for calling, welcome to dvs mcd"
+}
+
+def addition(a,b){
+  sum = a + b 
+  println "addition of ${a} & ${b} is: ${sum}"
+}
 pipeline {
   agent any 
   stages {
-    stage('working with conditions') {
+    stage('welcome') {
       steps {
         script {
-          for(i=1;i<=5;i++){
-            println "my i value  is ${i}"
-          }
-          lis1 = ["devops","genai","aidevops"]
-          for(j in lis1){
-            println "my value is ${j} "
-          }
-          k=1
-          while(k<=5){
-            println "value of  k is: ${k}"
-            k = k + 1
-          }
+          welcom_note() // calling the function
+          addition(300,400)
         }
       }
     }
