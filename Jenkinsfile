@@ -1,19 +1,14 @@
-def welcom_note(){
-  println "Hey thanks for calling, welcome to dvs mcd"
-}
-
-def addition(a,b){
-  sum = a + b 
-  println "addition of ${a} & ${b} is: ${sum}"
-}
 pipeline {
   agent any 
   stages {
-    stage('welcome') {
+    stage('file-handling') {
       steps {
         script {
-          welcom_note() // calling the function
-          addition(300,400)
+           File file = new File("/tmp/test.txt")
+           def lines = file.readLines()
+           println "Lines\n ${lines}"
+           for (line in lines) {
+             println "myline is ${line}"
         }
       }
     }
