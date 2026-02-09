@@ -4,13 +4,17 @@ pipeline {
     stage('working with conditions') {
       steps {
         script {
-          a = 100
-          b = 20 
-          if ( a > b) {
-            println "a value is big: ${a}"
+          for(i=1;i<=5;i++){
+            println "my i value  is ${i}"
           }
-          else {
-            println "b is big: ${b}"
+          lis1 = ["devops","genai","aidevops"]
+          for(j in lis1){
+            println "my value is ${j} "
+          }
+          k=1
+          while(k<=5){
+            println "value of  k is: ${k}"
+            k = k + 1
           }
         }
       }
